@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אתר מגניב עם הרבה אופציות</title>
+    <title>אישור גיל 18</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,77 +12,85 @@
             margin: 0;
             padding: 0;
         }
-        h1 {
-            color: #ff6347;
-            margin-top: 50px;
+
+        .container {
+            margin-top: 100px;
         }
-        nav {
-            background-color: #333;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        .content {
-            padding: 20px;
-        }
+
         .button {
             padding: 10px 20px;
-            background-color: #ff6347;
-            color: white;
+            margin: 10px;
+            font-size: 1.2rem;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
-        .button:hover {
-            background-color: #ff4500;
-        }
-        .image-gallery {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .image-gallery img {
-            width: 200px;
-            border-radius: 8px;
-        }
-        .footer {
-            background-color: #333;
+
+        .yes-button {
+            background-color: #4caf50;
             color: white;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        }
+
+        .no-button {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .smile-container {
+            margin-top: 50px;
+        }
+
+        .smile {
+            font-size: 2rem;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .message {
+            font-size: 1.5rem;
+            color: #333;
         }
     </style>
 </head>
 <body>
+    <div id="age-check" class="container">
+        <h1>האם יש לך גיל 18?</h1>
+        <button class="button yes-button" onclick="allowAccess()">כן</button>
+        <button class="button no-button" onclick="denyAccess()">לא</button>
+    </div>
 
-    <nav>
-        <a href="#">דף הבית</a>
-        <a href="#">גלריה</a>
-        <a href="#">צור קשר</a>
-    </nav>
-
-    <h1>ברוכים הבאים לאתר המגניב שלנו!</h1>
-
-    <div class="content">
-        <p>האתר הזה מלא באופציות מגניבות!</p>
-
-        <button class="button" onclick="alert('תמונה מופיעה!')">הצג תמונה</button>
-
-        <div class="image-gallery">
-            <img src="https://placekitten.com/200/200" alt="תמונה 1">
-            <img src="https://placekitten.com/200/300" alt="תמונה 2">
-            <img src="https://placekitten.com/300/300" alt="תמונה 3">
+    <div id="smile-page" class="container" style="display: none;">
+        <h1>ברוכים הבאים!</h1>
+        <p>הנה המון סמיילים בשבילך 😄:</p>
+        <div class="smile-container">
+            <span class="smile">😄</span>
+            <span class="smile">😁</span>
+            <span class="smile">😂</span>
+            <span class="smile">🤣</span>
+            <span class="smile">😊</span>
+            <span class="smile">😎</span>
+            <span class="smile">😍</span>
+            <span class="smile">🤩</span>
+            <span class="smile">😘</span>
+            <span class="smile">🤗</span>
         </div>
     </div>
 
-    <div class="footer">
-        <p>© 2024 האתר המגניב | כל הזכויות שמורות</p>
+    <div id="denied-page" class="container" style="display: none;">
+        <h1>מצטערים!</h1>
+        <p class="message">אין לך גיל 18, ולכן אין לך הרשאה להיכנס לאתר זה.</p>
     </div>
 
+    <script>
+        function allowAccess() {
+            document.getElementById('age-check').style.display = 'none';
+            document.getElementById('smile-page').style.display = 'block';
+        }
+
+        function denyAccess() {
+            document.getElementById('age-check').style.display = 'none';
+            document.getElementById('denied-page').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
