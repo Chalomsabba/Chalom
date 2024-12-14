@@ -8,13 +8,20 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f0f0f0;
+            background-color: #000;
+            color: #fff;
             margin: 0;
             padding: 0;
         }
 
+        h1 {
+            font-size: 3rem;
+            margin-top: 20%;
+            color: #ffcc00;
+        }
+
         .container {
-            margin-top: 100px;
+            margin-top: 50px;
         }
 
         .button {
@@ -24,6 +31,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .yes-button {
@@ -36,19 +44,12 @@
             color: white;
         }
 
-        .smile-container {
+        .smiley-container {
             margin-top: 50px;
         }
 
-        .smile {
-            font-size: 2rem;
-            margin: 5px;
-            display: inline-block;
-        }
-
-        .message {
-            font-size: 1.5rem;
-            color: #333;
+        .smiley {
+            font-size: 10rem;
         }
     </style>
 </head>
@@ -59,32 +60,23 @@
         <button class="button no-button" onclick="denyAccess()">לא</button>
     </div>
 
-    <div id="smile-page" class="container" style="display: none;">
-        <h1>ברוכים הבאים!</h1>
-        <p>הנה המון סמיילים בשבילך 😄:</p>
-        <div class="smile-container">
-            <span class="smile">😄</span>
-            <span class="smile">😁</span>
-            <span class="smile">😂</span>
-            <span class="smile">🤣</span>
-            <span class="smile">😊</span>
-            <span class="smile">😎</span>
-            <span class="smile">😍</span>
-            <span class="smile">🤩</span>
-            <span class="smile">😘</span>
-            <span class="smile">🤗</span>
+    <div id="smiley-page" class="container" style="display: none;">
+        <h1>ברוך הבא!</h1>
+        <div class="smiley-container">
+            <!-- סמיילי ענק של אצבע אמצעית -->
+            <span class="smiley">🖕</span>
         </div>
     </div>
 
     <div id="denied-page" class="container" style="display: none;">
         <h1>מצטערים!</h1>
-        <p class="message">אין לך גיל 18, ולכן אין לך הרשאה להיכנס לאתר זה.</p>
+        <p>אין לך גיל 18, ולכן אין לך הרשאה להיכנס לאתר זה.</p>
     </div>
 
     <script>
         function allowAccess() {
             document.getElementById('age-check').style.display = 'none';
-            document.getElementById('smile-page').style.display = 'block';
+            document.getElementById('smiley-page').style.display = 'block';
         }
 
         function denyAccess() {
