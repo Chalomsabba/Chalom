@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אתר מגניב עם הרבה אופציות</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #ff6347;
+            margin-top: 50px;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #ff4500;
+        }
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .image-gallery img {
+            width: 200px;
+            border-radius: 8px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">דף הבית</a>
+        <a href="#">גלריה</a>
+        <a href="#">צור קשר</a>
+    </nav>
+
+    <h1>ברוכים הבאים לאתר המגניב שלנו!</h1>
+
+    <div class="content">
+        <p>האתר הזה מלא באופציות מגניבות!</p>
+
+        <button class="button" onclick="alert('תמונה מופיעה!')">הצג תמונה</button>
+
+        <div class="image-gallery">
+            <img src="https://placekitten.com/200/200" alt="תמונה 1">
+            <img src="https://placekitten.com/200/300" alt="תמונה 2">
+            <img src="https://placekitten.com/300/300" alt="תמונה 3">
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 האתר המגניב | כל הזכויות שמורות</p>
+    </div>
+
+</body>
+</html>
